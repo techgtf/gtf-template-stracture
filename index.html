@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content=""/>
+  <meta name="keywords" content="" />
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+</head>
+<body>
+  <!---------------- Menu Section Codes Start From Here --------------->
+  <div class="container-fluid custom-navbar"></div>
+  <!---------------- Menu Section Codes End From Here --------------->
+  <!---------------- Slider Section Codes Start From Here --------------->
+  <div class="container-fluid slider-container"></div>
+  <!---------------- Slider Section Codes End From Here --------------->
+  <!---------------- Overview Section Codes Start From Here --------------->
+  <div class="container-fluid overview-contaier" id="overview"></div>
+  <!---------------- Overview Section Codes End From Here --------------->
+  <!---------------- Highlights Section Codes Start From Here --------------->
+  <div class="container-fluid highlights-container" id="highlights"></div>
+  <!---------------- Highlights Section Codes End From Here --------------->
+  <!---------------- Price List Section Codes Start From Here --------------->
+  <div class="container-fluid pricelist-container" id="price-list"></div>
+  <!---------------- Price List Section Codes End From Here --------------->
+  <!---------------- Amenities Section Codes Start From Here --------------->
+  <div class="container-fluid amenities-container" id="amenities"></div>
+  <!---------------- Amenities Section Codes End From Here --------------->
+  <!---------------- Floor Plan Section Codes Start From Here --------------->
+  <div class="container-fluid floorplan-container" id="floor-plan"></div>
+  <!---------------- Floor Plan Section Codes End From Here --------------->
+  <!---------------- Amenities Section Codes Start From Here --------------->
+  <div class="container-fluid location-container" id="location"></div>
+  <!---------------- Amenities Section Codes End From Here --------------->
+  <!---------------- Gallery Section Codes Start From Here --------------->
+  <div class="container-fluid gallery-container" id="gallery"></div>
+  <!---------------- Gallery Section Codes End From Here --------------->
+  <!---------------- Contact Section Codes Start From Here --------------->
+  <div class="container-fluid contact-container" id="contact-us"></div>
+  <!---------------- Contact Section Codes End From Here --------------->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+
+  <script type="text/javascript" language="javascript">
+      var versionUpdate = (new Date()).getTime();
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://api2.gtftech.com/scripts/queryform.min.ssl.js?v=" + versionUpdate;
+      document.body.appendChild(script);
+  </script>
+  <script>
+     var AgentInfo = {
+         "vAgentID": "",
+         "vProject": "",
+         "vURL": "",
+         "thankspageurl": "/thanks.htm",
+     };
+
+     //Needs to be duplicate in the case of multiple forms on the same page
+     //--------------------------------------------------------------------------------------//
+     $('#preferedtime').hide();
+
+     $("#SubmitQuery").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderName",
+             "SenderControlMobileID": "qMobileNo",
+             "SenderControlEmailID": "qEmailID",
+             "SenderControlMsgID": "qMessage"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     });
+
+     $("#SubmitQuery1").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderName1",
+             "SenderControlMobileID": "qMobileNo1",
+             "SenderControlEmailID": "qEmailID1",
+             "SenderControlMsgID": "qMessage1"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     });    
+
+     $("#SubmitQuery2").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderName2",
+             "SenderControlMobileID": "qMobileNo2",
+             "SenderControlEmailID": "qEmailID2",
+             "SenderControlMsgID": "qMessage2"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     });  
+
+     $("#SubmitQuery3").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderName3",
+             "SenderControlMobileID": "qMobileNo3",
+             "SenderControlEmailID": "qEmailID3",
+             "SenderControlMsgID": "qMessage3"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     }); 
+
+     $("#SubmitQuerymodal").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderNamemodal",
+             "SenderControlMobileID": "qMobileNomodal",
+             "SenderControlEmailID": "qEmailIDmodal",
+             "SenderControlMsgID": "qMessagemodal"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     });
+
+
+   $("#SubmitQueryfooter").click(function () {
+         var FormInfo = {
+             "SenderControlID": "qSenderNamefooter",
+             "SenderControlMobileID": "qMobileNofooter",
+             "SenderControlEmailID": "qEmailIDfooter",
+             "SenderControlMsgID": "qMessagefooter"
+         };
+
+         SubmitQueryData(AgentInfo, FormInfo);
+     });
+
+     //--------------------------------------------------------------------------------------//
+   </script>
+   <!--------------------- Images Zooming Plugin  ----------------->
+   <script>
+   $('.without-caption').magnificPopup({
+     type: 'image',
+     closeOnContentClick: true,
+     closeBtnInside: false,
+     mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+     image: {
+         verticalFit: true
+     },
+     zoom: {
+         enabled: true,
+         duration: 300 // don't foget to change the duration also in CSS
+     }
+     });
+
+     $('.with-caption').magnificPopup({
+     type: 'image',
+     closeOnContentClick: true,
+     closeBtnInside: false,
+     mainClass: 'mfp-with-zoom mfp-img-mobile',
+     image: {
+         verticalFit: true,
+         titleSrc: function(item) {
+           return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank"></a>';
+         }
+     },
+     zoom: {
+         enabled: true
+     }
+   });
+   </script>
+    <!--------------------- End Here Images Zooming Plugin  ----------------->
+    <!---------------------  Menu Set With Section Plugin  Plz Add This Class nav-link-custom in Your a Tag ----------------->
+  <script>
+         $('.nav-link-custom').on('click',function (e) {
+           // e.preventDefault();
+         
+           var target = this.hash,
+           $target = $(target);
+         
+          $('html, body').stop().animate({
+            'scrollTop': $target.offset().top-70
+           }, 500, 'swing', function () {
+            window.location.hash = target;
+           });
+         });
+         
+   </script>
+   <!--------------------- End Here Menu Set With Section Plugin  Plz Add This Class nav-link-custom in Your a Tag ----------------->
+   <!-------------------For Close Your Navbar In Mobile On Click A Tag  ------------------------>
+  <script>
+   $(document).ready(function(){
+     $(".nav-item-2").click(function(){
+       $(".collapse").removeClass("show");
+     });
+   });
+   </script>
+   <!------------------- End Here For Close Your Navbar In Mobile On Click A Tag  ------------------------>
+</body>
+</html>
